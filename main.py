@@ -1,20 +1,20 @@
-import random
+import random#импортирование библиотеки случайных значений
 
-val=[random.randint(-10, 10) for _ in range(20)]
-print("Список значений: ", val)
+val=[random.randint(-10, 10) for _ in range(20)]#создание случайных значений
+print("Список значений: ", val)#вывод списка значений
 
-pairs=[]
-for i in range(len(val)):
-    for j in range(i+1, len(val)):
-        pairs.append((val[i], val[j]))
+pairs=[]#инициализация пустого списка
+for i in range(len(val)):#цикл для создания
+    for j in range(i+1, len(val)):#цикл для создания
+        pairs.append((val[i], val[j]))#добавление элемента
 
-print("\nВсе уникальные пары: ", pairs)
+print("\nВсе уникальные пары: ", pairs)#вывод пар
 
-num=int(input("Введите целое число: "))
+num=int(input("Введите целое число: "))#Ввод для числа для проверки
 
-count=0
-for pair in pairs:
-    if sum(pair)<num:
-        count+=1
+count=0#инициализация счетчика
+for pair in pairs:#цикл для перебора
+    if sum(pair)<num:#проверка менььше ли вводимого значения
+        count+=1#увеличение счетчика
 
-print(f"\nКол-во пар, чья сумма меньше {num}: {count}")
+print(f"\nКол-во пар, чья сумма меньше {num}: {count}")#вывод результата
